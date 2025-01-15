@@ -4,8 +4,6 @@ A highly customizable, interactive map of Iran designed for React and Next.js ap
 you can dynamically highlight provinces based on their codes, values, and colors, making it ideal for data visualization
 or interactive dashboards.
 
----
-
 ## Features
 
 - **Dynamic Province Coloring**: Change the color intensity of provinces using their codes and provided values.
@@ -13,7 +11,6 @@ or interactive dashboards.
 - **Next.js Ready**: Fully compatible with React and Next.js environments.
 - **Interactive**: Easy-to-use props for dynamic updates and event handling.
 
----
 
 ## Installation
 
@@ -21,7 +18,6 @@ or interactive dashboards.
    npm install noa-iran-map-react
 ```
 
----
 
 ## Usage
 
@@ -38,13 +34,10 @@ export default function Home() {
     };
 
     return (
-        <IranMap data = {data}  />
-)
-    ;
+        <IranMap data={data}  />
+    );
 }
 ```
-
----
 
 ## Props
 
@@ -55,7 +48,7 @@ export default function Home() {
 | `tooltipLabel`    | `(code: string) => string` | `undefined` | Function to define the tooltip label when hovering provinces.   |
 | `data`            | `Record<string, number>`   | `{}`        | An object containing province codes as keys and values as data. |
 
----
+
 
 ## Province Codes
 
@@ -68,11 +61,8 @@ export default function Home() {
 All province codes's JSON
 file: [Download](https://freecyberhawk.github.io/noa_iran_map_react/assets/iran_provinces.json)
 
----
 
 ## Authors
 
 - [FreeCyberHawk](https://github.com/freecyberhawk)
 - [YousefZare](https://github.com/YousefZare2000)
-
----
