@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="A highly customizable, interactive map of Iran for React and Next.js applications. Perfect for data visualization and dashboards.">
+    <meta name="author" content="FreeCyberHawk, YousefZare">
+    <title>Noa Iran Map React - Interactive Iran Map for React & Next.js</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            background-color: #f9f9f9;
+            color: #333;
+            padding: 20px;
+        }
+
+        header {
+            text-align: center;
+            padding: 20px 0;
+            background-color: #ff5733;
+            color: white;
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+
+        header p {
+            font-size: 1rem;
+            margin-bottom: 0;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 20px auto;
+            padding: 20px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            margin: 20px 0;
+            font-size: 1.8rem;
+            color: #ff5733;
+        }
+
+        pre {
+            background-color: #2d2d2d;
+            color: #f8f8f2;
+            padding: 15px;
+            border-radius: 6px;
+            overflow-x: auto;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+            margin-bottom: 20px;
+        }
+
+        table, th, td {
+            border: 1px solid #ddd;
+        }
+
+        th, td {
+            padding: 10px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f4f4f4;
+        }
+
+        .download {
+            display: inline-block;
+            margin-top: 10px;
+            padding: 10px 20px;
+            background-color: #ff5733;
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+            transition: background 0.3s;
+        }
+
+        .download:hover {
+            background-color: #e14e2d;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 40px;
+            color: #777;
+        }
+
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2rem;
+            }
+
+            header p {
+                font-size: 0.9rem;
+            }
+
+            h2 {
+                font-size: 1.5rem;
+            }
+
+            pre {
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+</head>
+<body>
+<header>
+    <h1>Noa Iran Map React</h1>
+    <p>The ultimate interactive map of Iran for React and Next.js applications</p>
+</header>
+<div class="container">
+    <h2>About</h2>
+    <p>
+        <strong>Noa Iran Map React</strong> is a highly customizable and interactive map of Iran, designed to seamlessly integrate
+        with React and Next.js applications. With robust TypeScript support and dynamic province highlighting, it’s perfect
+        for creating interactive dashboards or visually rich data applications.
+    </p>
+
+    <h2>Features</h2>
+    <ul>
+        <li><strong>Dynamic Province Coloring:</strong> Highlight provinces using their codes and corresponding data values.</li>
+        <li><strong>TypeScript Ready:</strong> Fully compatible with TypeScript for enhanced type safety and code clarity.</li>
+        <li><strong>Next.js Friendly:</strong> Optimized for server-side rendering and fast performance in React environments.</li>
+        <li><strong>Interactive:</strong> Enable dynamic updates and interactive events with intuitive props.</li>
+    </ul>
+
+    <h2>Installation</h2>
+    <pre><code>npm install noa-iran-map-react</code></pre>
+
+    <h2>Usage Example</h2>
+    <pre><code>
+import React from 'react';
+import IranMap from 'noa-iran-map-react';
+
+export default function Home() {
+    const data = {
+        "IR-32": 100, // استان البرز
+        "IR-15": 200, // استان کرمان
+        "IR-04": 250, // استان کرمان
+    };
+
+    return (
+        &lt;IranMap data={data} /&gt;
+    );
+}
+        </code></pre>
+
+    <h2>Props</h2>
+    <table>
+        <thead>
+        <tr>
+            <th>Prop Name</th>
+            <th>Type</th>
+            <th>Default</th>
+            <th>Description</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td><code>color</code></td>
+            <td>string</td>
+            <td>#FF5733</td>
+            <td>The fill color for provinces that have data.</td>
+        </tr>
+        <tr>
+            <td><code>backgroundColor</code></td>
+            <td>string</td>
+            <td>#E0E0E0</td>
+            <td>The default color for provinces without specific data.</td>
+        </tr>
+        <tr>
+            <td><code>tooltipLabel</code></td>
+            <td>(code: string) => string</td>
+            <td>undefined</td>
+            <td>Function to define the tooltip label when hovering provinces.</td>
+        </tr>
+        <tr>
+            <td><code>data</code></td>
+            <td>Record&lt;string, number&gt;</td>
+            <td>{}</td>
+            <td>An object containing province codes as keys and values as data.</td>
+        </tr>
+        </tbody>
+    </table>
+
+    <h2>Province Codes</h2>
+    <p>Below are some example province codes for use with the <strong>data</strong> prop:</p>
+    <table>
+        <thead>
+        <tr>
+            <th>Province Name</th>
+            <th>Code</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td>Alborz</td>
+            <td>IR-32</td>
+        </tr>
+        <tr>
+            <td>Kerman</td>
+            <td>IR-15</td>
+        </tr>
+        <tr>
+            <td>Fars</td>
+            <td>IR-04</td>
+        </tr>
+        </tbody>
+    </table>
+    <a href="https://freecyberhawk.github.io/noa_iran_map_react/assets/iran_provinces.json" class="download">Download Full Province Codes JSON</a>
+</div>
+<footer>
+    <p>&copy; 2025 <a href="https://github.com/freecyberhawk" target="_blank">FreeCyberHawk</a> &amp; <a href="https://github.com/YousefZare2000" target="_blank">YousefZare</a>. All rights reserved.</p>
+</footer>
+</body>
+</html>
