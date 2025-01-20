@@ -1,6 +1,6 @@
 "use client"
 import React, {useState, useEffect} from 'react';
-import "styles.css";
+import "./IranMap.css";
 
 interface Props {
     data: { [key: string]: number };
@@ -12,7 +12,7 @@ interface Props {
     showListValue?: boolean,
     showListTitle?: boolean,
     fontSize?: "xs" | "sm" | "md" | "lg" | "xl",
-    listStyle?: React.CSSProperties,
+    styles?: React.CSSProperties,
 }
 
 function getProvincePersianTitle(id: string) {
@@ -170,7 +170,7 @@ export default function IranMap({
                                     showListValue = false,
                                     showListTitle = true,
                                     fontSize = "md",
-                                    listStyle
+                                    styles
                                 }: Props) {
     const [svgContent, setSvgContent] = useState<string | null>(null);
     const [tooltip, setTooltip] = useState<{ x: number; y: number; value: number | null }>({x: 0, y: 0, value: null}); // وضعیت تول‌تیپ
@@ -262,7 +262,8 @@ export default function IranMap({
                     width: '100%',
                     height: propsHeight,
                     alignItems: 'center',
-                    gap: 14
+                    gap: 14,
+                    ...styles
                 }}>
                     <svg
                         xmlns="http://www.w3.org/2000/svg"
@@ -274,7 +275,7 @@ export default function IranMap({
                         }}
                         dangerouslySetInnerHTML={{__html: updateSvgColors() || ""}}
                     />
-                    <ul style={{listStyle: 'none', maxHeight: height, overflowY: 'scroll', scrollbarWidth: 'none',...listStyle}}>
+                    <ul style={{listStyle: 'none', maxHeight: height, overflowY: 'scroll', scrollbarWidth: 'none'}}>
                         {
                             showListTitle ? <li>
                                 <p style={{fontSize: NumberedFontSize + 2, fontWeight: 'bold'}}>استان های کشور</p>
@@ -282,7 +283,7 @@ export default function IranMap({
                         }
                         {
                             output.map((i: any) => (
-                                <li style={{display: 'flex', alignItems: 'center', gap: 6, margin: "8px 0"}}>
+                                <li style={{display: 'flex', alignItems: 'center', gap: 5, margin: "8px 0"}}>
                                     <span style={{
                                         width: 14,
                                         height: 14,
