@@ -280,7 +280,7 @@ export default function IranMap({
                         }
                         {
                             output.map((i: any) => (
-                                <li style={{display: 'flex', alignItems: 'center', gap: 6, margin: "12px 0"}}>
+                                <li style={{display: 'flex', alignItems: 'center', gap: 6, margin: "8px 0"}}>
                                     <span style={{
                                         width: 14,
                                         height: 14,
