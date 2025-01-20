@@ -25,8 +25,9 @@ or interactive dashboards.
 ## Usage
 
 ```typescript
+"use cleint"
 import React from 'react';
-import IranMap from 'noa-iran-map-react';
+import {IranMap} from 'noa-iran-map-react';
 
 export default function Home() {
     const data = {
@@ -37,7 +38,9 @@ export default function Home() {
     };
 
     return (
-        <IranMap data={data}  />
+        <div style={{height:"200px"}}>
+            <IranMap data={data}  />
+        </div>
     );
 }
 ```
