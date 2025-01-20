@@ -1,7 +1,7 @@
 # Noa Iran Map React
 
 <div style="flex: 1">
-<img src="https://freecyberhawk.github.io/noa_iran_map_react/assets/demo_screen.png" alt="Kara Persian Datepicker Screenshot" width="auto" height="400">
+<img src="https://freecyberhawk.github.io/noa_iran_map_react/assets/demo_image.png" alt="Kara Persian Datepicker Screenshot" width="auto" height="400">
 </div>
 A highly customizable, interactive map of Iran designed for React and Next.js applications. With support for TypeScript,
 you can dynamically highlight provinces based on their codes, values, and colors, making it ideal for data visualization
