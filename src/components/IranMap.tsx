@@ -87,7 +87,7 @@ const IranMap: React.FC<Props> = ({data, color = "#177a6e", backgroundColor = "#
                     viewBox={"0 0 660 660"}
                     preserveAspectRatio={"xMidYMid meet"}
                     style={{
-                        width: '100%',
+                        width: 'auto',
                         height: '100%',
                     }}
                     dangerouslySetInnerHTML={{__html: updateSvgColors() || ""}}
