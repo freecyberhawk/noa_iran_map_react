@@ -1,8 +1,9 @@
 "use client"
 import React, {useState, useEffect} from 'react';
+import "styles.css";
 
 interface Props {
-    data: { [key: string]: number }; // داده‌های ورودی
+    data: { [key: string]: number };
     color?: string,
     backgroundColor?: string,
     tooltipLabel?: string,
@@ -10,7 +11,8 @@ interface Props {
     listItems?: number,
     showListValue?: boolean,
     showListTitle?: boolean,
-    fontSize?: "xs" | "sm" | "md" | "lg" | "xl"
+    fontSize?: "xs" | "sm" | "md" | "lg" | "xl",
+    listStyle?: React.CSSProperties,
 }
 
 function getProvincePersianTitle(id: string) {
@@ -168,6 +170,7 @@ export default function IranMap({
                                     showListValue = false,
                                     showListTitle = true,
                                     fontSize = "md",
+                                    listStyle
                                 }: Props) {
     const [svgContent, setSvgContent] = useState<string | null>(null);
     const [tooltip, setTooltip] = useState<{ x: number; y: number; value: number | null }>({x: 0, y: 0, value: null}); // وضعیت تول‌تیپ
@@ -193,7 +196,6 @@ export default function IranMap({
     let output = sortedData.map(([key, value]) => ({code: key, value}));
 
     const propsHeight = height
-
 
 
     const rgbDefaultColor = hexToRgb(color)
@@ -272,7 +274,7 @@ export default function IranMap({
                         }}
                         dangerouslySetInnerHTML={{__html: updateSvgColors() || ""}}
                     />
-                    <ul style={{listStyle: 'none', maxHeight: height, overflowY: 'scroll', scrollbarWidth: 'none'}}>
+                    <ul style={{listStyle: 'none', maxHeight: height, overflowY: 'scroll', scrollbarWidth: 'none',...listStyle}}>
                         {
                             showListTitle ? <li>
                                 <p style={{fontSize: NumberedFontSize + 2, fontWeight: 'bold'}}>استان های کشور</p>
